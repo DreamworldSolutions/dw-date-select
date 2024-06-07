@@ -83,26 +83,8 @@ export class DwDateRangeSelectDemo extends LitElement {
 
   render() {
     return html`
-      <span>Input Value Empty</span>
-      <dw-date-select .items=${DateRangeItems}> </dw-date-select>
 
-      <br />
-
-      <div>Input value matches with one of items</div>
-      <dw-date-select
-        .label=${"Select Date"}
-        .heading=${"Select Duration"}
-        showClose
-        .items=${DateRangeItems}
-        .value=${valueProvider.today()}
-        selectedTrailingIcon="done"
-        @selected=${this._onSelected}
-      >
-      </dw-date-select>
-
-      <br />
-
-      <div>Input value does not matches with one of items</div>
+      <div>Date select </div>
       <dw-date-select
         .label=${"Select Date"}
         .items=${DateRangeItems}
