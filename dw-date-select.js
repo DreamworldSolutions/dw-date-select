@@ -1,4 +1,4 @@
-import { html } from '@dreamworld/pwa-helpers/lit.js';
+import { html, css } from '@dreamworld/pwa-helpers/lit.js';
 import { DwSelect } from '@dreamworld/dw-select/dw-select.js';
 import isEqual from 'lodash-es/isEqual';
 import find from 'lodash-es/find';
@@ -12,6 +12,23 @@ import '@dreamworld/dw-date-input/dw-date-input-dialog.js';
 
 
 export class DwDateSelect extends DwSelect {
+  static get styles() {
+    return [
+      css`
+        :host {
+          --dw-popover-border-radius: 16px;
+          --dw-dialog-border-radius: 16px;
+          --dw-select-content-padding: 16px 0;
+          --dw-dialog-header-padding: 4px 4px 4px 16px;
+
+          --mdc-text-field-label-ink-color: var(--mdc-theme-text-secondary-on-surface);
+          --mdc-theme-text-primary: var(--mdc-theme-text-primary-on-surface);
+          --mdc-text-field-ink-color: var(--mdc-theme-text-primary-on-surface);
+        }
+      `,
+    ];
+  }
+
   constructor() {
     super();
     this.valueTextProvider = (item, customLabel) => {

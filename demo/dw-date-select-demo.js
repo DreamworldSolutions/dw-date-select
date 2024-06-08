@@ -88,7 +88,6 @@ export class DwDateRangeSelectDemo extends LitElement {
       <dw-date-select
         .label=${"Select Date"}
         .items=${DateRangeItems}
-        .mobileMode=${false}
         .value=${this._currentDate}
         @selected=${this._onSelected}
       >
