@@ -33,11 +33,11 @@
   },
   "dependencies": {
     "@dreamworld/dw-date-input": "^6.0.6",
-    "@dreamworld/dw-dialog": "^5.7.4",
+    "@dreamworld/dw-dialog": "^5.7.7",
     "@dreamworld/dw-form": "^4.1.5",
-    "@dreamworld/dw-icon-button": "^3.2.5",
-    "@dreamworld/dw-select": "^6.0.1",
-    "@dreamworld/pwa-helpers": "^1.16.5",
+    "@dreamworld/dw-icon-button": "^3.2.7",
+    "@dreamworld/dw-select": "^6.1.38",
+    "@dreamworld/pwa-helpers": "^2.0.4",
     "dayjs": "^1.11.10",
     "litepicker": "^2.0.12",
     "lodash-es": "^4.17.21"
