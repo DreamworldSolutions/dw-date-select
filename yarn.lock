@@ -62,10 +62,10 @@
     "@dreamworld/pwa-helpers" "^1.13.1"
     "@material/mwc-button" "0.27.0"
 
-"@dreamworld/dw-date-input@^6.0.6":
-  version "6.0.6"
-  resolved "https://registry.yarnpkg.com/@dreamworld/dw-date-input/-/dw-date-input-6.0.6.tgz#b8b58a01ae064fdd520ba15428aa07302c978716"
-  integrity sha512-sEZiKt3gpsvRT6oUIV052HSezIUGM7cxQ/WzhtHRtB9RxWIn5w8SfOo7wb3A2/XBOhah5zqjNL8/WcEcX9KQSA==
+"@dreamworld/dw-date-input@^6.0.9":
+  version "6.0.9"
+  resolved "https://registry.yarnpkg.com/@dreamworld/dw-date-input/-/dw-date-input-6.0.9.tgz#78610c8bc422848b7dd7b067b3ab263c43ffcafd"
+  integrity sha512-BfoLqDjwwVpXkIuUqM1kv1kcsRdDQRADgam3hbzVC61EBuFTIFcJkdW0ub6JjJq/j2sSaKgwPEMXthr+l3W1AQ==
   dependencies:
     "@dreamworld/dw-dialog" "^5.7.4"
     "@dreamworld/dw-form" "^4.1.2"
@@ -75,18 +75,7 @@
     dayjs "^1.11.10"
     litepicker "^2.0.12"
 
-"@dreamworld/dw-dialog@^5.7.4":
-  version "5.7.4"
-  resolved "https://registry.yarnpkg.com/@dreamworld/dw-dialog/-/dw-dialog-5.7.4.tgz#866c9f4bb2cd3fd98c0630a8bcb045da9bcc049f"
-  integrity sha512-28DYGZ/ibEqgTvT0+aAgrrLM7X5pbeVqeoIW0tp6qmA6CFINwT+k5l0lxYGkypwtdgdLPqnZTvTKcnAMO9esWA==
-  dependencies:
-    "@dreamworld/material-styles" "^3.1.0"
-    "@dreamworld/pwa-helpers" "^1.14.0"
-    "@material/dialog" "^14.0.0"
-    lodash-es "^4.17.15"
-    tippy.js "^6.2.7"
-
-"@dreamworld/dw-dialog@^5.7.5", "@dreamworld/dw-dialog@^5.7.7":
+"@dreamworld/dw-dialog@^5.7.4", "@dreamworld/dw-dialog@^5.7.5", "@dreamworld/dw-dialog@^5.7.7":
   version "5.7.9"
   resolved "https://registry.yarnpkg.com/@dreamworld/dw-dialog/-/dw-dialog-5.7.9.tgz#89940abe26c2dfd8be4b48d1089a7a40d8b2c182"
   integrity sha512-rBTavqHwXbhrqrkWBIyL/GD6O60tFOAhRyiTheXETrYzPyyRoY2qh7LemTbcqoPGHZL5IXUObSJZsi86CFI67Q==
@@ -106,16 +95,7 @@
     "@dreamworld/pwa-helpers" "^1.13.1"
     bowser "^2.11.0"
 
-"@dreamworld/dw-form@^4.0.0", "@dreamworld/dw-form@^4.1.1", "@dreamworld/dw-form@^4.1.2":
-  version "4.1.2"
-  resolved "https://registry.yarnpkg.com/@dreamworld/dw-form/-/dw-form-4.1.2.tgz#f9bfe2379ecacd56200a1eeaaabb9d9e26de5bc8"
-  integrity sha512-VwdeMYGJBTf8QZzoh9eZ14lxFojVjBNF2Yf8C8653dYblUtaBJKTNNlV26if1JN/o7EuIJPptTRt7nKSb9qlqA==
-  dependencies:
-    "@dreamworld/material-styles" "^3.0.0"
-    "@dreamworld/pwa-helpers" "^1.13.1"
-    lodash-es "^4.17.15"
-
-"@dreamworld/dw-form@^4.1.5":
+"@dreamworld/dw-form@^4.0.0", "@dreamworld/dw-form@^4.1.1", "@dreamworld/dw-form@^4.1.2", "@dreamworld/dw-form@^4.1.5":
   version "4.1.5"
   resolved "https://registry.yarnpkg.com/@dreamworld/dw-form/-/dw-form-4.1.5.tgz#a1c9b9eb1c700b142f3ec522fbd4700b2c057b40"
   integrity sha512-Nh8YgZ4J2KYHo06wqHW98IgYoNn2BKkOXxq93CoN9RYLNZV+95WW/wnKVOoU7b3DBwa0Sp57nRZDwgNcJBNlvQ==
@@ -124,18 +104,7 @@
     "@dreamworld/pwa-helpers" "^1.13.1"
     lodash-es "^4.17.15"
 
-"@dreamworld/dw-icon-button@^3.0.0", "@dreamworld/dw-icon-button@^3.2.4", "@dreamworld/dw-icon-button@^3.2.5":
-  version "3.2.5"
-  resolved "https://registry.yarnpkg.com/@dreamworld/dw-icon-button/-/dw-icon-button-3.2.5.tgz#3bb577f373e52c5a979dbcf3715c9a9989c529e9"
-  integrity sha512-FIzcTozybkoN2jWC/gK02wPrKM+BvG6uxKfVFqT8XlyCWIcoPtep7CthzMpxUodbRY7OjSC8Vm9OBniZa5li5A==
-  dependencies:
-    "@dreamworld/dw-icon" "^4.0.0"
-    "@dreamworld/dw-tooltip" "^3.1.1"
-    "@dreamworld/pwa-helpers" "^1.13.1"
-    "@dreamworld/web-util" "^1.2.0"
-    "@material/mwc-base" "0.27.0"
-
-"@dreamworld/dw-icon-button@^3.2.7":
+"@dreamworld/dw-icon-button@^3.0.0", "@dreamworld/dw-icon-button@^3.2.4", "@dreamworld/dw-icon-button@^3.2.5", "@dreamworld/dw-icon-button@^3.2.7":
   version "3.2.7"
   resolved "https://registry.yarnpkg.com/@dreamworld/dw-icon-button/-/dw-icon-button-3.2.7.tgz#90255348ba952ffead80270fc9867859410830b1"
   integrity sha512-PkhxCvolrq4Wc8GKtcOoIomOPv6oS7KmEbK6AmL35/FYHCuESZyM/li97r/wCyvDTjn2WsIgdVGlgSwYK4uowQ==
@@ -154,20 +123,7 @@
     "@dreamworld/pwa-helpers" "^1.13.1"
     "@material/mwc-icon" "0.27.0"
 
-"@dreamworld/dw-input@^4.0.11":
-  version "4.1.1"
-  resolved "https://registry.yarnpkg.com/@dreamworld/dw-input/-/dw-input-4.1.1.tgz#6e2189370b876a152d11de6cddb2c364e68915f9"
-  integrity sha512-J4rBo8QzSKrhsoJ+U3bYc6LRj5f2rvb4nYxpEuJlM3IUWZxbDZDEhJNbqpA4UXXFQZy2cMpJfcIFQmLbrXCkeg==
-  dependencies:
-    "@dreamworld/dw-button" "^3.0.3"
-    "@dreamworld/dw-form" "^4.0.0"
-    "@dreamworld/dw-icon" "^4.0.0"
-    "@dreamworld/dw-icon-button" "^3.0.0"
-    "@dreamworld/dw-tooltip" "^3.1.1"
-    "@material/textfield" "^14.0.0"
-    lodash-es "^4.17.21"
-
-"@dreamworld/dw-input@^4.1.8":
+"@dreamworld/dw-input@^4.0.11", "@dreamworld/dw-input@^4.1.8":
   version "4.1.14"
   resolved "https://registry.yarnpkg.com/@dreamworld/dw-input/-/dw-input-4.1.14.tgz#643d64f7d69198e8d45aab2ae2df3173d7f9a41a"
   integrity sha512-nqrWd/uWbDFxR4WedEaARerNBtDDZru0jaMHusYN8xyT7HIjFI5l3LksMyhpJuYy22aGV2zJ81oZ6QHHLTQ88g==
@@ -193,15 +149,7 @@
     "@dreamworld/web-util" "^1.7.2"
     mark.js "^8.11.1"
 
-"@dreamworld/dw-ripple@^3.1.0":
-  version "3.1.4"
-  resolved "https://registry.yarnpkg.com/@dreamworld/dw-ripple/-/dw-ripple-3.1.4.tgz#2f1c71085e5fb8d533c0483e916d7384a44e00fb"
-  integrity sha512-TSzWitv5pOKujunInudKW/4X6aft/xDZSdji8fudLWpudzIFi1kFQX4Bce2K6oCq2kyD+j6zdijJeOlNa0iMFw==
-  dependencies:
-    "@dreamworld/pwa-helpers" "^1.16.5"
-    "@material/mwc-ripple" "0.27.0"
-
-"@dreamworld/dw-ripple@^3.1.5":
+"@dreamworld/dw-ripple@^3.1.0", "@dreamworld/dw-ripple@^3.1.5":
   version "3.1.5"
   resolved "https://registry.yarnpkg.com/@dreamworld/dw-ripple/-/dw-ripple-3.1.5.tgz#d792100e932608b29fa9c5bb74d0fcbd6fcc27ab"
   integrity sha512-vapp1egmj6Q9KvJW9HtisIQcnXaVZ3BAP5W8B5P35/yz9mdDiphKqydQVG05azqREwnkN+JTdirNKrgGgyjzeA==
@@ -230,16 +178,7 @@
     "@material/mwc-circular-progress" "^0.27.0"
     lodash-es "^4.17.21"
 
-"@dreamworld/dw-tooltip@^3.1.1":
-  version "3.1.1"
-  resolved "https://registry.yarnpkg.com/@dreamworld/dw-tooltip/-/dw-tooltip-3.1.1.tgz#ccf7488b79cc08c6edc9f752446a50ba0a3be9c8"
-  integrity sha512-PbOhFO51tjd3ASLRi9wEupA4ClMfXHjmIynhHjLK3xMsuPL97E1/YJP9Z5ZYUB9wu3Gr4PIvbUKgdPUSb8BfeA==
-  dependencies:
-    "@dreamworld/material-styles" "^3.0.0"
-    "@dreamworld/pwa-helpers" "^1.13.1"
-    tippy.js "^6.2.7"
-
-"@dreamworld/dw-tooltip@^3.1.2":
+"@dreamworld/dw-tooltip@3.1.2", "@dreamworld/dw-tooltip@^3.1.1", "@dreamworld/dw-tooltip@^3.1.2":
   version "3.1.2"
   resolved "https://registry.yarnpkg.com/@dreamworld/dw-tooltip/-/dw-tooltip-3.1.2.tgz#d02b1078101bd63c0272619cb2ca392fcb9ddd8c"
   integrity sha512-N94OTzeGlXeSCQCjZVZYTotLK756QSBGl5M3/c1AakpfblOBrQiTUErIwnmqsY4DVupUSQVy+/fXrqroDfGBLw==
@@ -253,14 +192,7 @@
   resolved "https://registry.yarnpkg.com/@dreamworld/event-emitter/-/event-emitter-1.1.0.tgz#576af754e42abbbb24aee07e47f76d589656bd72"
   integrity sha512-B2qURdBRBrr2+6figkq6a+eGtAcGANkYhqLGsrNEr8qePD6jWhGx9DZvw5ql1qLIne35b4VsheYLSh24ttQMxA==
 
-"@dreamworld/material-styles@^3.0.0", "@dreamworld/material-styles@^3.1.0", "@dreamworld/material-styles@^3.2.3":
-  version "3.2.3"
-  resolved "https://registry.yarnpkg.com/@dreamworld/material-styles/-/material-styles-3.2.3.tgz#4e47c1b87b8e54c822f1ce17ec37652acd65f3a9"
-  integrity sha512-BCmeSz79KBnT+R4e64y5WLH4t8jKsL72FmZ9c7wB7Xz5XA1AJklinP2mgp4h4gBeZ9tYnhlgrEclryxqSGfxfQ==
-  dependencies:
-    "@dreamworld/pwa-helpers" "^1.13.1"
-
-"@dreamworld/material-styles@^3.2.4":
+"@dreamworld/material-styles@^3.0.0", "@dreamworld/material-styles@^3.1.0", "@dreamworld/material-styles@^3.2.3", "@dreamworld/material-styles@^3.2.4":
   version "3.2.4"
   resolved "https://registry.yarnpkg.com/@dreamworld/material-styles/-/material-styles-3.2.4.tgz#8513d0e65566d8d7c4ee0fd08d1d08ff47879966"
   integrity sha512-RQgwjiQDBFfYxNRkyuwunev3Ijk+FIOYIkqPJk0mvnnPPPOCQcUZKXsa4lS2N0Ez1daYWcT0KLvzIilqiWtBIg==
@@ -290,15 +222,7 @@
     lit-element "^4.0.2"
     lodash-es "^4.17.21"
 
-"@dreamworld/web-util@^1.2.0":
-  version "1.7.1"
-  resolved "https://registry.yarnpkg.com/@dreamworld/web-util/-/web-util-1.7.1.tgz#aab5d9d658ff5419c7084878d5ae88b52289d8ef"
-  integrity sha512-r2AGGtDclUoi6ARBrpqf//2TEUI5tkTKMJ/yyUcgsDb/U9POe2IgTDE5waDgjsfMjj3SZsUGBMP5+sNaWR+VdA==
-  dependencies:
-    bowser "^2.11.0"
-    lodash-es "^4.17.21"
-
-"@dreamworld/web-util@^1.7.2":
+"@dreamworld/web-util@^1.2.0", "@dreamworld/web-util@^1.7.2":
   version "1.7.2"
   resolved "https://registry.yarnpkg.com/@dreamworld/web-util/-/web-util-1.7.2.tgz#376b13469518d6385ba1a8a95e1e196f4629937d"
   integrity sha512-AZq6tyFOEObKPYqjHf4d+EOt1bw6KDWk8V0ZNoJU9smeivCUouBfCoq3Q1OxOzO9VUvSlEhdG5GBr0fKTsZZRQ==
