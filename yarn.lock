@@ -62,10 +62,10 @@
     "@dreamworld/pwa-helpers" "^1.13.1"
     "@material/mwc-button" "0.27.0"
 
-"@dreamworld/dw-date-input@^6.0.9":
-  version "6.0.9"
-  resolved "https://registry.yarnpkg.com/@dreamworld/dw-date-input/-/dw-date-input-6.0.9.tgz#78610c8bc422848b7dd7b067b3ab263c43ffcafd"
-  integrity sha512-BfoLqDjwwVpXkIuUqM1kv1kcsRdDQRADgam3hbzVC61EBuFTIFcJkdW0ub6JjJq/j2sSaKgwPEMXthr+l3W1AQ==
+"@dreamworld/dw-date-input@^6.0.10":
+  version "6.0.10"
+  resolved "https://registry.yarnpkg.com/@dreamworld/dw-date-input/-/dw-date-input-6.0.10.tgz#7775ae3470a20498a6c99ae4bbf0b0e780b3fc76"
+  integrity sha512-Xj3rRyiwN8HhSGxOpL8fqSk/X4R4mtKV0ep1JwMnYL/uctamLrqEcsH0/YbpvFlZzg9Xd+zHo7ZgKZm/FPwJ1A==
   dependencies:
     "@dreamworld/dw-dialog" "^5.7.4"
     "@dreamworld/dw-form" "^4.1.2"
