@@ -34,7 +34,7 @@ export class DwDateSelect extends DwSelect {
     this.valueTextProvider = (item, customLabel) => {
       if (customLabel) {
         const value = (this.value && this.value.valueProvider && this.value.valueProvider()) || this.value;
-        if ((!item || item.showCustomRange || item === 'SELECT_DATE') && value && value.end) {
+        if ((!item || item.showCustomDate || item === 'SELECT_DATE') && value && value.end) {
           const text = `${dayjs(value.end).format(this.dateRepresentationFormat)}`;
           return text;
         }
@@ -59,7 +59,7 @@ export class DwDateSelect extends DwSelect {
         return true;
       }
 
-      if (v1 === 'SELECT_DATE' || (v1 && v1.showCustomRange && v1 && v2 && ((v2.end) || v2.showCustomRange))) {
+      if (v1 === 'SELECT_DATE' || (v1 && v1.showCustomDate && v1 && v2 && ((v2.end) || v2.showCustomDate))) {
         return true;
       }
 
@@ -262,7 +262,7 @@ export class DwDateSelect extends DwSelect {
 
   _onDatePickerValueChanged(e) {
     const value = e?.detail?.value || '';
-    const selectedItem = find(this.items, 'showCustomRange');
+    const selectedItem = find(this.items, 'showCustomDate');
     const DATE_FORMAT = 'YYYY-MM-DD';
     if (value) {
       const valueProvider = function () {
@@ -284,7 +284,7 @@ export class DwDateSelect extends DwSelect {
 
   _onChange(e) {
     const value = e?.target?.value || '';
-    const selectedItem = find(this.items, 'showCustomRange');
+    const selectedItem = find(this.items, 'showCustomDate');
     const DATE_FORMAT = 'YYYY-MM-DD';
     if (value) {
       const valueProvider = function () {
@@ -319,7 +319,7 @@ export class DwDateSelect extends DwSelect {
   }
 
   _hideCustomDate() {
-    const selectedItem = find(this.items, 'showCustomRange');
+    const selectedItem = find(this.items, 'showCustomDate');
     const value = this.items;
     this.items = value && value.includes(selectedItem) ? without(value, selectedItem) : value;
   }
@@ -333,7 +333,7 @@ export class DwDateSelect extends DwSelect {
   }
 
   async _onSelect(e) {
-    if (e?.detail?.showCustomRange) {
+    if (e?.detail?.showCustomDate) {
       if (this.datePicker) {
         this.datePicker.opened = true;
       }

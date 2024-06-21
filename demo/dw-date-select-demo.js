@@ -57,7 +57,7 @@ const DateRangeItems = [
   // },
   {
     label: "Select date",
-    showCustomRange: true
+    showCustomDate: true
   },
 ];
 
