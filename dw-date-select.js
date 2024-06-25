@@ -5,11 +5,7 @@ import find from 'lodash-es/find';
 import dayjs from 'dayjs/esm/index.js';
 import without from 'lodash-es/without.js';
 
-import * as _valueProvider from './value-provider.js';
-import * as _valueProviderFactory from './value-provider-factory.js';
 import '@dreamworld/dw-date-input/dw-date-picker.js';
-import '@dreamworld/dw-date-input/dw-date-input-dialog.js';
-
 
 export class DwDateSelect extends DwSelect {
   static get styles() {
@@ -154,61 +150,20 @@ export class DwDateSelect extends DwSelect {
   }
 
   render() {
-    return html`${super.render()} ${this.datePickerTemplate}${this.dateInputDialogTemplate}`;
-  }
-
-  get dateInputDialogTemplate() {
-    return html`
-      <dw-date-input-dialog
-        date-picker="false"
-        .type=${'modal'}
-        .placement=${'center'}
-        .inputFormat="${this.inputFormat}"
-        .valueFormat=${this.valueFormat}
-        .dateRepresentationFormat="${this.dateRepresentationFormat}"
-        .label="${this.label}"
-        ?disabled="${this.disabled}"
-        .invalid=${this.invalid}
-        ?noLabel="${this.noLabel}"
-        ?required="${this.required}"
-        ?readOnly="${this.readOnly}"
-        ?autoSelect="${this.autoSelect}"
-        ?dense="${this.dense}"
-        ?hintPersistent="${this.hintPersistent}"
-        .placeholder="${this.inputFormat}"
-        ?highlightChanged="${this.highlightChanged}"
-        ?noHintWrap="${this.noHintWrap}"
-        .value="${this.value?.end}"
-        .originalDate="${this.originalValue}"
-        .name="${this.name}"
-        .hint="${this.hint}"
-        .minDate="${this.minDate}"
-        .maxDate="${this.maxDate}"
-        .showFutureWarning=${this.showFutureWarning}
-        .showFutureError=${this.showFutureError}
-        .warning=${this._warning}
-        .error=${this._error}
-        .hintInTooltip="${this.hintInTooltip}"
-        .errorInTooltip="${this.errorInTooltip}"
-        .warningInTooltip="${this.warningInTooltip}"
-        .hintTooltipActions="${this.hintTooltipActions}"
-        .errorTooltipActions="${this.errorTooltipActions}"
-        .warningTooltipActions="${this.warningTooltipActions}"
-        .tipPlacement="${this.tipPlacement}"
-        .errorMessages="${this._errorMessages}"
-        @dw-dialog-closed=${e => this._triggerDateInputDialogOpenedChanged(false)}
-        @dw-dialog-opened=${e => this._triggerDateInputDialogOpenedChanged(true)}
-        @mode-changed=${this._onDateInputDialogModeChanged}
-        @change=${this._onChange}
-      >
-      </dw-date-input-dialog>
-    `;
+    return html`${super.render()} ${this.datePickerTemplate}`;
   }
 
   get datePickerTemplate() {
     if (this.hideCustomDate) {
       return;
     }
+
+    let selectedItem;
+    if (typeof this.value === 'string') {
+       selectedItem = find(this.items, { name: this.value});
+    }
+    const value = selectedItem ? selectedItem.valueProvider() : this.value;
+    
     return html`
       <dw-date-picker
         date-picker="false"
@@ -221,7 +176,7 @@ export class DwDateSelect extends DwSelect {
         .showTrigger=${true}
         .appendTo=${this.appendTo}
         .zIndex=${this.zIndex}
-        .value=${this.value?.end}
+        .value=${value?.end}
         .minDate="${this.minDate}"
         .maxDate="${this.maxDate}"
         .inputFormat=${this.inputFormat}
@@ -230,7 +185,6 @@ export class DwDateSelect extends DwSelect {
         .triggerElement=${this.triggerElement}
         @dw-dialog-closed=${e => this._triggerDatePickerOpenedChanged(false)}
         @dw-dialog-opened=${e => this._triggerDatePickerOpenedChanged(true)}
-        @mode-changed=${this._onDatePickerModeChanged}
         @change=${this._onDatePickerValueChanged}
       >
       </dw-date-picker>
@@ -282,28 +236,6 @@ export class DwDateSelect extends DwSelect {
     }, 0);
   }
 
-  _onChange(e) {
-    const value = e?.target?.value || '';
-    const selectedItem = find(this.items, 'showCustomDate');
-    const DATE_FORMAT = 'YYYY-MM-DD';
-    if (value) {
-      const valueProvider = function () {
-        return { end: dayjs(value).format(DATE_FORMAT) };
-      };
-      this.value = {
-        ...selectedItem,
-        ...{
-          valueProvider,
-        },
-      };
-      this._selectedValueText = this._getValue(selectedItem);
-      this._dispatchSelected(value);
-      setTimeout(() => {
-        this.validate();
-      }, 0);
-    }
-  }
-
   firstUpdated(changeProps) {
     super.firstUpdated && super.firstUpdated(changeProps);
     if (!this.triggerElement) {
@@ -326,10 +258,6 @@ export class DwDateSelect extends DwSelect {
 
   get datePicker() {
     return this.renderRoot.querySelector('dw-date-picker');
-  }
-
-  get dateInputDialog() {
-    return this.renderRoot.querySelector('dw-date-input-dialog');
   }
 
   async _onSelect(e) {
@@ -360,16 +288,6 @@ export class DwDateSelect extends DwSelect {
     }
   }
 
-  _triggerDateInputDialogOpenedChanged(opened) {
-    this.dispatchEvent(
-      new CustomEvent('date-input-dialog-opened-changed', {
-        detail: {
-          opened,
-        },
-      })
-    );
-  }
-
   _triggerDatePickerOpenedChanged(opened) {
     this._pickerOpned = opened;
     this.dispatchEvent(
@@ -380,21 +298,6 @@ export class DwDateSelect extends DwSelect {
       })
     );
   }
-
-  _onDatePickerModeChanged(e) {
-    if (this.dateInputDialog) {
-      this.dateInputDialog.opened = true;
-    }
-  }
-
-  _onDateInputDialogModeChanged(e) {
-    if (this.datePicker) {
-      this.datePicker.opened = true;
-    }
-  }
 }
 
 customElements.define('dw-date-select', DwDateSelect);
-
-export const valueProvider = _valueProvider;
-export const valueProviderFactory = _valueProviderFactory;

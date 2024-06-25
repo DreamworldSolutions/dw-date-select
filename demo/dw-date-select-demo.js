@@ -1,60 +1,25 @@
 import { LitElement, html, css } from "@dreamworld/pwa-helpers/lit.js";
-import { valueProvider, valueProviderFactory } from "../dw-date-select.js";
-import { isEqual } from "lodash-es";
+import "../dw-date-select.js";
+import dayjs from 'dayjs/esm/index.js';
 
+
+const DATE_FORMAT = 'YYYY-MM-DD';
 const DateRangeItems = [
-  // {
-  //   label: "This Month",
-  //   valueProvider: valueProvider.thisMonth,
-  // },
   {
     label: "End of This Month",
-    valueProvider: valueProvider.endOfThisMonth,
+    valueProvider: () => {
+      return {
+        end: dayjs().endOf('month').format(DATE_FORMAT),
+      }}
   },
   {
     label: "End of Last Month",
-    valueProvider: valueProvider.endOfLastMonth,
+    valueProvider: () => {
+      return {
+        end: dayjs().subtract(1, 'months').endOf('month').format(DATE_FORMAT),
+      };
+    },
   },
-  // {
-  //   label: "Last Quarter",
-  //   valueProvider: valueProviderFactory.lastQuarter("01/04"),
-  // },
-  // {
-  //   label: "This Financial Year",
-  //   valueProvider: valueProviderFactory.thisFinancialYear("01/04"),
-  // },
-  // {
-  //   label: "Last Financial Year",
-  //   valueProvider: valueProviderFactory.lastFinancialYear("01/04"),
-  // },
-  // {
-  //   label: "Last 3 Months",
-  //   valueProvider: valueProviderFactory.lastNMonths(3),
-  // },
-  // {
-  //   label: "Last 2nd month",
-  //   valueProvider: valueProviderFactory.lastNthMonth(2),
-  // },
-  // {
-  //   label: "before 30 days",
-  //   valueProvider: valueProviderFactory.beforeNDays(30),
-  // },
-  // {
-  //   label: "today",
-  //   valueProvider: valueProvider.today,
-  // },
-  // {
-  //   label: "Last Week",
-  //   valueProvider: valueProviderFactory.lastWeek(),
-  // },
-  // {
-  //   label: "End of Last Week",
-  //   valueProvider: valueProviderFactory.lastWeek(true),
-  // },
-  // {
-  //   label: "End of Next Month",
-  //   valueProvider: valueProviderFactory.nextMonth(true),
-  // },
   {
     label: "Select date",
     showCustomDate: true
@@ -98,7 +63,6 @@ export class DwDateRangeSelectDemo extends LitElement {
   _onSelected(e) {
     if(e && e.detail && e.detail.valueProvider) {
       this._currentDate = e.detail.valueProvider();
-      console.log(this._currentDate);
     }
   }
 }
