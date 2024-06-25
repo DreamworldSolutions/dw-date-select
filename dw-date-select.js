@@ -5,8 +5,6 @@ import find from 'lodash-es/find';
 import dayjs from 'dayjs/esm/index.js';
 import without from 'lodash-es/without.js';
 
-import * as _valueProvider from './value-provider.js';
-import * as _valueProviderFactory from './value-provider-factory.js';
 import '@dreamworld/dw-date-input/dw-date-picker.js';
 import '@dreamworld/dw-date-input/dw-date-input-dialog.js';
 
@@ -209,6 +207,13 @@ export class DwDateSelect extends DwSelect {
     if (this.hideCustomDate) {
       return;
     }
+
+    let selectedItem;
+    if (typeof this.value === 'string') {
+       selectedItem = find(this.items, { name: this.value});
+    }
+    const value = selectedItem ? selectedItem.valueProvider() : this.value;
+    
     return html`
       <dw-date-picker
         date-picker="false"
@@ -221,7 +226,7 @@ export class DwDateSelect extends DwSelect {
         .showTrigger=${true}
         .appendTo=${this.appendTo}
         .zIndex=${this.zIndex}
-        .value=${this.value?.end}
+        .value=${value?.end}
         .minDate="${this.minDate}"
         .maxDate="${this.maxDate}"
         .inputFormat=${this.inputFormat}
@@ -395,6 +400,3 @@ export class DwDateSelect extends DwSelect {
 }
 
 customElements.define('dw-date-select', DwDateSelect);
-
-export const valueProvider = _valueProvider;
-export const valueProviderFactory = _valueProviderFactory;
