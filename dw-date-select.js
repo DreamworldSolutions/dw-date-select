@@ -67,9 +67,8 @@ export class DwDateSelect extends DwSelect {
     this.mobileMode = false;
     this.tabletMode = false;
     this.valueFormat = 'YYYY-MM-DD';
-    this.inputFormat = 'DD/MM/YYYY';
     this.dateRepresentationFormat = 'DD MMM YYYY';
-    this.dateInputFormat = 'dd/mm/yyyy';
+    this.dateInputFormat = 'DD/MM/YYYY';
   }
 
   static get properties() {
@@ -162,7 +161,7 @@ export class DwDateSelect extends DwSelect {
     if (typeof this.value === 'string') {
        selectedItem = find(this.items, { name: this.value});
     }
-    const value = selectedItem ? selectedItem.valueProvider() : this.value;
+    const value = selectedItem ? selectedItem.valueProvider().end : (this.value.end || this.value.valueProvider().end) ;
     
     return html`
       <dw-date-picker
@@ -176,10 +175,10 @@ export class DwDateSelect extends DwSelect {
         .showTrigger=${true}
         .appendTo=${this.appendTo}
         .zIndex=${this.zIndex}
-        .value=${value?.end}
+        .value=${value}
         .minDate="${this.minDate}"
         .maxDate="${this.maxDate}"
-        .inputFormat=${this.inputFormat}
+        .inputFormat=${this.dateInputFormat}
         .valueFormat=${this.valueFormat}
         .dateRepresentationFormat="${this.dateRepresentationFormat}"
         .triggerElement=${this.triggerElement}
