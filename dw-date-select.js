@@ -68,7 +68,7 @@ export class DwDateSelect extends DwSelect {
     this.tabletMode = false;
     this.valueFormat = 'YYYY-MM-DD';
     this.dateRepresentationFormat = 'DD MMM YYYY';
-    this.dateInputFormat = 'dd/mm/yyyy';
+    this.dateInputFormat = 'DD/MM/YYYY';
   }
 
   static get properties() {
