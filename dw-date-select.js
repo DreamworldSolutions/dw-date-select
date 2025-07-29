@@ -161,7 +161,7 @@ export class DwDateSelect extends DwSelect {
     if (typeof this.value === 'string') {
       selectedItem = find(this.items, { name: this.value});
     }
-    const value = selectedItem ? selectedItem.valueProvider()?.end : (this.value?.end || this.value?.valueProvider?.().end) ;
+    const value = selectedItem ? selectedItem.valueProvider()?.end : (this.value?.end || this.value?.valueProvider?.()?.end) ;
 
     return html`
       <dw-date-picker
